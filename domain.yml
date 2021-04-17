@@ -1,0 +1,60 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - movie_options
+  - download_movie
+
+entities:
+- movie
+
+slots:
+  movie:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_movie_options:
+  - text: "Right now I can only download movies. Do you want me do download a movie?"
+
+  utter_ask_movie:
+  - text: "Which movie do you want to download?"
+
+  utter_download_movie:
+  - text: "Starting to dowload {movie}. It will be available soon :)"
+
+forms:
+  donwload_movie_form:
+    movie:
+    - intent: download_movie
+      type: from_entity
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

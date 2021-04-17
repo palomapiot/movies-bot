@@ -1,0 +1,116 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: movie_options
+  examples: |
+    - help me
+    - help
+    - what can you do?
+    - can you help me?
+    - what can I do?
+
+- intent: download_movie
+  examples: |
+    - I want to download [Finding Nemo](movie)
+    - I want to download [Titanic](movie)
+    - I want to download [Soul](movie)
+    - I want to download [El Padrino](movie)
+    - I want to download [La lista de Schindler](movie)
+    - I want to download [Cadena Perpetua](movie)
+    - I want to download [Pulp Fiction](movie)
+    - I want to download [El gran dictador](movie)
+    - I want to download [American History X](movie)
+    - I want to download [Matar a un ruiseñor](movie)
+    - I want to download [El pianista](movie)
+    - I want to download [Narnia](movie)
+    - I want to download [Popeye](movie)

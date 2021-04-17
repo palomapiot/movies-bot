@@ -1,0 +1,27 @@
+version: "2.0"
+
+rules:
+- rule: Say hi anytime the user says hi
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Show options anytime the user ask what the bot can do
+  steps:
+  - intent: movie_options
+  - action: utter_movie_options
+
+- rule: Download movie when the user inputs a movie
+  steps:
+  - intent: download_movie
+  - action: utter_download_movie
