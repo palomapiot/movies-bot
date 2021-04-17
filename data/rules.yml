@@ -16,12 +16,17 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Show options anytime the user ask what the bot can do
-  steps:
-  - intent: movie_options
-  - action: utter_movie_options
-
-- rule: Download movie when the user inputs a movie
+- rule: activate movie form
   steps:
   - intent: download_movie
-  - action: utter_download_movie
+  - action: movie_form
+  - active_loop: movie_form
+
+- rule: submit movie form
+  condition: 
+  - active_loop: movie_form
+  steps:
+  - action: movie_form
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values

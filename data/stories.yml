@@ -34,4 +34,7 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: download_movie
-  - action: utter_download_movie
+  - action: movie_form
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
