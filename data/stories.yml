@@ -1,40 +1,37 @@
 version: "2.0"
 
 stories:
-
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
 - story: download movie happy path
   steps:
   - intent: greet
   - action: utter_greet
+  - intent: movie_options
+  - action: utter_movie_options
   - intent: download_movie
   - action: movie_form
   - active_loop: null
   - action: utter_submit
   - action: utter_slots_values
+
+- story: Tell the user the available options and go to movie form
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: movie_options
+  - action: utter_movie_options
+  - intent: affirm
+  - action: movie_form
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
+
+- story: Tell the user the available options and finish
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: movie_options
+  - action: utter_movie_options
+  - intent: deny
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_goodbye

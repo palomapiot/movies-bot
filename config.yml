@@ -11,10 +11,9 @@ pipeline:
     - name: LexicalSyntacticFeaturizer
 #   - name: CountVectorsFeaturizer
     - name: CountVectorsFeaturizer
-      token_pattern: (?u)\b\w+\b
-#     analyzer: char_wb
-#     min_ngram: 1
-#     max_ngram: 4
+      analyzer: char_wb
+      min_ngram: 1
+      max_ngram: 4
     - name: DIETClassifier
       epochs: 100
 #     constrain_similarities: true

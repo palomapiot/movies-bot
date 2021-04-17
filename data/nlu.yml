@@ -131,3 +131,14 @@ nlu:
     - id like the movie [Narnia](movie) 
     - im looking for the movie [El Señor de los Anillos](movie) 
     - im looking for [Harry Potter](movie) 
+
+- intent: affirm
+  examples: |
+    - Yes
+    - yes, please
+    - yup
+- intent: deny
+  examples: |
+    - no don't
+    - no
+    - no I don't want that
