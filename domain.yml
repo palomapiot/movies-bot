@@ -1,55 +1,60 @@
-version: "2.0"
-
-intents:
-  - download_movie
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - movie_options
-  - inform
-
-entities:
-  - movie
-
-slots:
-  movie:
-    type: text
-    auto_fill: false
-    influence_conversation: false
-
-responses:
-  utter_greet:
-    - text: "Hey! Welcome to the movie bot! What can I help you with today?"
-
-  utter_goodbye:
-    - text: "Bye"
-
-  utter_iamabot:
-    - text: "I am a bot, powered by Rasa."
-
-  utter_movie_options:
-    - text: "Right now I can only download movies. Do you want me do download a movie?"
-
-  utter_ask_movie:
-    - text: "Which movie do you want to download?"
-
-  utter_submit:
-    - text: "All done!"
-
-  utter_slots_values:
-    - text: "I am going to run a search for the following movie: {movie}"
-
-forms:
-  movie_form:
-    movie:
-    - type: from_entity
-      entity: movie
-      intent: [inform, download_movie]
-
+version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+- download_movie:
+    use_entities: true
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- movie_options:
+    use_entities: true
+- inform:
+    use_entities: true
+entities:
+- movie
+slots:
+  movie:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hey! Welcome to the movie bot! What can I help you with today?
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_movie_options:
+  - text: Right now I can only download movies. Do you want me do download a movie?
+  utter_ask_movie:
+  - text: Which movie do you want to download?
+  utter_submit:
+  - text: All done!
+  utter_slots_values:
+  - text: 'I am going to run a search for the following movie: {movie}'
+actions: []
+forms:
+  movie_form:
+    movie:
+    - entity: movie
+      intent:
+      - inform
+      - download_movie
+      type: from_entity
+e2e_actions: []
