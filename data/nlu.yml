@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,7 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
+    - hola
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,7 +29,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -39,7 +37,9 @@ nlu:
     - of course
     - that sounds good
     - correct
-
+    - Yes
+    - yes, please
+    - yup
 - intent: deny
   examples: |
     - no
@@ -49,7 +49,8 @@ nlu:
     - don't like that
     - no way
     - not really
-
+    - no don't
+    - no I don't want that
 - intent: mood_great
   examples: |
     - perfect
@@ -66,7 +67,6 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -83,14 +83,12 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
 - intent: movie_options
   examples: |
     - help me
@@ -98,7 +96,6 @@ nlu:
     - what can you do?
     - can you help me?
     - what can I do?
-
 - intent: download_movie
   examples: |
     - Do you have [Finding Nemo](movie)
@@ -115,30 +112,29 @@ nlu:
     - I want to download a movie
     - Can you download a movie?
     - Is it possible to download a movie?
-
+    - download the aristocats please
+    - i want to download pokemon
+    - i want to download [finding nemo](movie)
+    - i want to download a movie
+    - i want to download [the simpsons](movie)
+    - i want to to download [el padrino](movie)
 - intent: inform
   examples: |
     - [Finding Nemo](movie) movie
     - I want [El pianista](movie)
     - I want to download [Pulp Fiction](movie)
-    - i would like [El gran dictador](movie) 
-    - i would like the movie [Matar a un ruiseñor](movie) 
+    - i would like [El gran dictador](movie)
+    - i would like the movie [Matar a un ruiseñor](movie)
     - I would like to download [La lista de Schindler](movie)
     - [Popeye](movie)
     - what about [American History X](movie)
     - um [Cadena Perpetua](movie)
-    - id like [Narnia](movie) 
-    - id like the movie [Narnia](movie) 
-    - im looking for the movie [El Señor de los Anillos](movie) 
-    - im looking for [Harry Potter](movie) 
-
-- intent: affirm
-  examples: |
-    - Yes
-    - yes, please
-    - yup
-- intent: deny
-  examples: |
-    - no don't
-    - no
-    - no I don't want that
+    - id like [Narnia](movie)
+    - id like the movie [Narnia](movie)
+    - im looking for the movie [El Señor de los Anillos](movie)
+    - im looking for [Harry Potter](movie)
+    - the aristocats
+    - id like a movie
+    - i want a movie
+    - i want to download a film
+    - i need a movie
