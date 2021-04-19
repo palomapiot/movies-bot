@@ -36,14 +36,20 @@ class ActionValidateMovieForm(Action):
         headers = {
             'Content-Type': 'application/json',
             'trakt-api-version': '2',
-            'trakt-api-key': '[client_id]' # client_id
+            'trakt-api-key': '99c154b68b67951f7a21354baa5f0afb68a9207e4c60f96bf08af0500f4602c5' # client_id
         }
         request = Request('https://api.trakt.tv/search/movie?query=' + movie_name, headers=headers)
         response_body = urlopen(request)
         movies = json.load(response_body)
-        response_movies = [movie['movie']['title'] for movie in movies]
+        buttons = []
+        for movie in movies:
+            button = {
+                "title": movie['movie']['title'],
+                "payload": "/select_movie"
+            }
+            buttons.append(button)
+        #buttons = [movie['movie']['title'] for movie in movies]
 
-        result_text = "Found the movies: " + str(response_movies)
-        dispatcher.utter_message(text=result_text)
+        dispatcher.utter_message(text="Found the movies:", buttons=buttons)
 
-        return [SlotSet("movie", response_movies if response_movies is not None else [])]
+        return []
