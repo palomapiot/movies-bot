@@ -39,5 +39,16 @@ rules:
     steps:
     - action: movie_form
     - active_loop: null
-    - action: utter_submit
-    - action: utter_slots_values
+
+  - rule: activate download movie form
+    steps:
+    - intent: select_movie
+    - action: download_movie_form
+    - active_loop: download_movie_form
+
+  - rule: submit download movie form
+    condition: 
+    - active_loop: download_movie_form
+    steps:
+    - action: download_movie_form
+    - active_loop: null

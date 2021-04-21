@@ -10,8 +10,6 @@ stories:
   - intent: download_movie
   - action: movie_form
   - active_loop: null
-  - action: utter_submit
-  - action: utter_slots_values
 
 - story: Tell the user the available options and go to movie form
   steps:
@@ -22,8 +20,6 @@ stories:
   - intent: affirm
   - action: movie_form
   - active_loop: null
-  - action: utter_submit
-  - action: utter_slots_values
 
 - story: Tell the user the available options and finish
   steps:
@@ -35,3 +31,14 @@ stories:
   - action: action_deactivate_loop
   - active_loop: null
   - action: utter_goodbye
+
+- story: fetch and download movie happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: download_movie
+  - action: movie_form
+  - active_loop: null
+  - intent: select_movie
+  - action: download_movie_form
+  - active_loop: null

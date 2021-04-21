@@ -25,10 +25,17 @@ intents:
     use_entities: true
 - inform:
     use_entities: true
+- select_movie:
+    use_entities: true
 entities:
 - movie
 slots:
   movie:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  selected_movie:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: false
@@ -44,12 +51,11 @@ responses:
   - text: Right now I can only download movies. Do you want me do download a movie?
   utter_ask_movie:
   - text: Which movie do you want to download?
-  utter_submit:
-  - text: Got your movie!
-  utter_slots_values:
-  - text: 'I am going to run a search for the following movie: {movie}'
+  utter_selected_movie:
+  - text: Great! Starting to download {selected_movie}.
 actions:
 - validate_movie_form
+- validate_download_movie_form
 forms:
   movie_form:
     movie:
@@ -57,5 +63,11 @@ forms:
       intent:
       - inform
       - download_movie
+      type: from_entity
+  download_movie_form:
+    selected_movie:
+    - entity: selected_movie
+      intent:
+      - select_movie
       type: from_entity
 e2e_actions: []

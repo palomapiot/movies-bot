@@ -118,6 +118,17 @@ nlu:
     - i want to download a movie
     - i want to download [the simpsons](movie)
     - i want to to download [el padrino](movie)
+    - can you download [los pitufos](movie)
+    - can you download [harry potter](movie)
+    - can you download [the lord of the rings](movie)
+    - can you download [titanic](movie)
+    - i want to download [titanic](movie)
+    - download [harry potter](movie) please
+    - download [finding nemo](movie)
+    - download [el padrino](movie)
+    - download [the aristocats](movie)
+    - i want to download [harry potter](movie)
+    - i want to download [the smurfs](movie)
 - intent: inform
   examples: |
     - [Finding Nemo](movie) movie
@@ -138,3 +149,4 @@ nlu:
     - i want a movie
     - i want to download a film
     - i need a movie
+    - [harry potter](movie)
