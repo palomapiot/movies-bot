@@ -1,7 +1,7 @@
 /models/
-credentials.yml
-events.db
-events.db-shm
-events.db-wal
-rasa.db
-actions/__pycache__/
+/credentials.yml
+/events.db
+/events.db-shm
+/events.db-wal
+/rasa.db
+/actions/__pycache__/
